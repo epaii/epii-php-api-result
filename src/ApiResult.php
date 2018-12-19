@@ -28,23 +28,35 @@ class ApiResult
 
     public function isSuccess($code_value = 1)
     {
+        if (!isset($this->data["code"])) {
+            return false;
+        }
         return $this->data["code"] == $code_value;
     }
 
     public function getMsg()
     {
-        return $this->data["msg"];
+        return isset($this->data["msg"]) ? $this->data["msg"] : "";
     }
 
     public function getCode()
     {
-        return $this->data["code"];
+        return isset($this->data["code"]) ? $this->data["code"] : "";
     }
 
     public function getData()
     {
+        return isset($this->data["data"]) ? $this->data["data"] : "";
+    }
 
-        return $this->data["data"];
+    public function getDataValue($name)
+    {
+        if ($data = self::getData()) {
+            if (is_array($data)) {
+                return isset($data[$name]) ? $data[$name] : null;
+            }
+        }
+        return null;
     }
 
     /*
