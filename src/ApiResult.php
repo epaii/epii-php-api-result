@@ -1,6 +1,6 @@
 <?php
 
-namespace epii\apiresult;
+namespace epii\api\result;
 
 /**
  * Created by PhpStorm.
