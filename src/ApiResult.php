@@ -11,6 +11,7 @@ namespace epii\api\result;
 class ApiResult
 {
 
+
     private $data;
 
 
