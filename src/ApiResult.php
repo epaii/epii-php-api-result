@@ -1,5 +1,7 @@
 <?php
 
+namespace epii\apiresult;
+
 /**
  * Created by PhpStorm.
  * User: mrren
