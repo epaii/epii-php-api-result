@@ -12,17 +12,22 @@ class ApiResult
 {
 
 
-    private $data = ["code" => "-1000", "msg" => "服务器请求失败", "data" => []];
+    private $data = null;
 
 
-    public function __construct($stringOrdata)
+    public function __construct($stringOrdata = null)
     {
 
 
         if (is_array($stringOrdata))
             $this->data = $stringOrdata;
-        else if (is_string($stringOrdata))
+        else if (is_string($stringOrdata)) {
             $this->data = json_decode($stringOrdata, true);
+
+        }
+        if (!$this->data) {
+            $this->data = ["code" => "-1000", "msg" => "字符格式不正确", "data" => []];
+        }
 
     }
 
