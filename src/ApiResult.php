@@ -26,7 +26,7 @@ class ApiResult
 
         }
         if (!$this->data) {
-            $this->data = ["code" => "-1000", "msg" => "字符格式不正确", "data" => []];
+            $this->data = ["code" => "-1000", "msg" => "字符格式不正确:".$stringOrdata., "data" => null];
         }
 
     }
